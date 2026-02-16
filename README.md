@@ -81,18 +81,20 @@ export default pool;
 ## Evidencia AA5: Diseño y Desarrollo de Servicios Web
 En esta fase se implementaron los servicios necesarios para la comunicación entre el Frontend y el Backend.
 
-### 1. Servicios de Registro (Punto 1 y 2 de la Guía)
-- Se creó una API REST usando Node.js y Express en el puerto 3000.
-- Endpoint de Registro: `POST /usuarios` para almacenar nuevos barberos.
+## 🚀 Pruebas de Funcionamiento (API REST & Seguridad)
 
-### 2. Validaciones (Punto 3 de la Guía)
-- Se implementaron validaciones en el Frontend (React) usando el atributo `required`.
-- Se añadieron verificaciones en el Backend para asegurar que los campos `nombre` y `contacto` no lleguen vacíos.
+### 1. Registro de Usuario (Encriptado)
+Permite registrar nuevos usuarios. La contraseña se encripta con **Bcrypt** antes de ir a la base de datos.
+![Registro de Usuario](./img/POST%20usuario%20creado.jpeg)
 
-### 3. Versionamiento (Punto 4 de la Guía)
-- Uso de Git para el control de versiones y despliegue en GitHub.
----
+### 2. Inicio de Sesión y Token (JWT)
+Servicio de autenticación que genera un token de seguridad para el usuario.
+![Login y JWT](./img/Inicio%20de%20sesión.jpeg)
 
+### 3. Validación de Datos
+Prueba de validación donde el sistema rechaza registros incompletos y verifica la existencia del usuario (Punto 3 de la guía).
+![Validaciones SQL](./img/MYSQL%20validación.jpeg)
+![Validaciones Postman](./img/POST%20usuario%20no%20encontrado.jpeg)
 
-**Aprendiz:** Henry Esteban Morales Cuellar
+**Aprendiz:** Henry Esteban Morales Cuellar  
 **Programa:** ADSO

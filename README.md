@@ -52,7 +52,7 @@ El sistema opera bajo una arquitectura cliente-servidor para garantizar la persi
 ### 📸 Formulario en Funcionamiento
 A continuación, se muestra la interfaz de registro operando en tiempo real y conectada al backend:
 
-![imagen del formulario.jpeg](./reservatuestilo/img)
+![imagen del formulario.jpeg](\reservatuestilo\img)
 
 
 ---
@@ -63,7 +63,7 @@ Para cumplir con los criterios de evaluación de la **AA5-EV01**, el backend se 
 ### 1. Conexión a MySQL (`db.js`)
 Configuración del pool de conexiones utilizando variables de entorno para mayor seguridad:
 
-```javascript
+javascript
 import mysql from "mysql2/promise";
 import 'dotenv/config';
 

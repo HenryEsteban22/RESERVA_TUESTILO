@@ -1,4 +1,6 @@
-# Evidencia: Codificación de Módulos del Software - Reserva Tu Estilo
+# Mi Proyecto reserva tu estilo 💈
+
+## Evidencia: Codificación de Módulos del Software - Reserva Tu Estilo
 **ID de Evidencia:** GA7-220501096-AA2-EV01
 
 ## 📋 Descripción
@@ -28,8 +30,6 @@ Modifica la información de un usuario existente mediante su ID.
 Elimina un registro de la base de datos.
 ![Eliminación de Usuario](./img/postman_delete.png)
 
-
-# Mi Proyecto reserva tu estilo 💈
 
 ## Evidencia AA3: Codificación de Módulos (Standalone/Web)
 (Aquí dejas lo que ya tenías escrito...)

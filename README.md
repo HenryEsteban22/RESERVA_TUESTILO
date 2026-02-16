@@ -4,49 +4,63 @@
 **ID de Evidencia:** GA7-220501096-AA5-EV01
 
 ## 📋 Descripción
-Este módulo realiza la gestión de usuarios y autenticación para el proyecto "Reserva Tu Estilo", utilizando Node.js y MySQL. Se implementó una arquitectura modular (MVC) y servicios web REST con seguridad JWT.
+Este módulo realiza la gestión de usuarios (CRUD) y la implementación de servicios de autenticación segura para el proyecto "Reserva Tu Estilo", utilizando Node.js, MySQL y React.
 
 ## 🛠️ Tecnologías Utilizadas
 * **Backend:** Node.js / Express
 * **Base de Datos:** MySQL
 * **Seguridad:** JSON Web Token (JWT) y Bcryptjs
 * **Frontend:** React.js
-
-## ⚙️ Configuración y Ejecución
-Para ejecutar este proyecto, configura tu archivo `.env` en la raíz del backend con:
-- `DB_HOST`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`
-- `JWT_SECRET` (Llave secreta para los tokens)
-
-### Pasos:
-1. Instalar dependencias: `npm install`
-2. Iniciar servidor: `npm start`
+* **Versionamiento:** Git / GitHub
 
 ---
 
-## 📸 Interfaz de Usuario (React)
-A continuación, se muestra el formulario de registro operando en tiempo real y conectado al backend:
+## 🚀 Pruebas de Funcionamiento (CRUD en Postman)
 
-![Formulario de Registro](./img/imagen%20del%20formulario.jpeg) 
+### 1. Inserción (Create)
+Permite registrar nuevos usuarios en la base de datos.
+![Inserción de Usuario](./img/postman_post.png)
+
+### 2. Consulta (Read)
+Muestra la lista de usuarios registrados.
+![Consulta de Usuarios](./img/postman_get.png)
+
+### 3. Actualización (Update)
+Modifica la información de un usuario existente mediante su ID.
+![Actualización de Usuario](./img/postman_put.png)
+
+### 4. Eliminación (Delete)
+Elimina un registro de la base de datos.
+![Eliminación de Usuario](./img/postman_delete.png)
 
 ---
 
-## 🚀 Pruebas de Funcionamiento (Servicios Web AA5)
+## 💻 Evidencia AA5: Diseño y Desarrollo de Servicios Web
 
-### 1. Registro de Usuario (Punto 1 de la Guía)
-Servicio `POST /usuarios` que recibe los datos y encripta la contraseña con **Bcrypt** antes de guardarla.
-![Registro Exitoso](./img/POST%20usuario%20creado.jpeg)
+### 📸 Interfaz de Usuario (React)
+Interfaz de registro operando en tiempo real y conectada al backend:
+![Formulario de Registro](./img/imagen%20del%20formulario.jpeg)
 
-### 2. Inicio de Sesión y Token JWT (Punto 2 de la Guía)
-Servicio `POST /usuarios/login` que valida credenciales y retorna un **Token de autenticación**.
+### 1. Registro con Encriptación (Bcrypt)
+Servicio que recibe los datos y cifra la contraseña antes de almacenarla en MySQL.
+![Registro Seguro](./img/POST%20usuario%20creado.jpeg)
+
+### 2. Inicio de Sesión y Token (JWT)
+Servicio de autenticación que valida credenciales y genera un token de seguridad.
 ![Login y Token](./img/Inicio%20de%20sesión.jpeg)
 
-### 3. Validaciones y Seguridad (Punto 3 de la Guía)
-* **Validación de campos**: El sistema rechaza registros incompletos.
-* **Integridad de datos**: Las contraseñas son ilegibles en la base de datos.
-![Validación SQL](./img/MYSQL%20validación.jpeg)
-![Error Usuario](./img/POST%20usuario%20no%20encontrado.jpeg)
+### 3. Validaciones de Verificación
+Pruebas de manejo de errores cuando los datos son incorrectos o el usuario no existe.
+![Validación Error](./img/POST%20usuario%20no%20encontrado.jpeg)
+![Validación DB](./img/MYSQL%20validación.jpeg)
 
 ---
+
+## ⚙️ Configuración del Proyecto
+Para ejecutar este proyecto localmente:
+1. Configurar archivo `.env` con las credenciales de la DB y `JWT_SECRET`.
+2. Ejecutar `npm install` en las carpetas de backend y frontend.
+3. Iniciar con `npm start`.
 
 **Aprendiz:** Henry Esteban Morales Cuellar
 **Programa:** ADSO

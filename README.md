@@ -57,7 +57,7 @@ A continuación, se muestra la interfaz de registro operando en tiempo real y co
 
 ---
 
-## 🛠️ Estructura del Código (Backend)
+### 🛠️ Estructura del Código (Backend)
 Para cumplir con los criterios de evaluación de la **AA5-EV01**, el backend se ha estructurado de forma modular:
 
 ### 1. Conexión a MySQL (`db.js`)

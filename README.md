@@ -52,8 +52,8 @@ El sistema opera bajo una arquitectura cliente-servidor para garantizar la persi
 ### 📸 Formulario en Funcionamiento
 A continuación, se muestra la interfaz de registro operando en tiempo real y conectada al backend:
 
-![Formulario de Registro Exitoso](./reservatuestilo/img)
-*(Nota: Asegúrate de que la imagen image_5ede42.png esté en tu carpeta /img con este nombre)*
+![imagen del formulario.jpeg](./reservatuestilo/img)
+
 
 ---
 
@@ -76,6 +76,8 @@ const pool = mysql.createPool({
 
 export default pool;
 
+
+
 ## Evidencia AA5: Diseño y Desarrollo de Servicios Web
 En esta fase se implementaron los servicios necesarios para la comunicación entre el Frontend y el Backend.
 
@@ -90,5 +92,7 @@ En esta fase se implementaron los servicios necesarios para la comunicación ent
 ### 3. Versionamiento (Punto 4 de la Guía)
 - Uso de Git para el control de versiones y despliegue en GitHub.
 ---
+
+
 **Aprendiz:** Henry Esteban Morales Cuellar
 **Programa:** ADSO

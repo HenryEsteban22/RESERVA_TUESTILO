@@ -5,10 +5,10 @@ const RegistroUsuarios = ({ employeeToEdit, onSaveComplete }) => {
     nombre: '',
     especialidad: '',
     experiencia: '',
-    contacto: ''
+    telefono: '',  
+    direccion: ''  
   });
 
-  // Si recibimos un empleado para editar, llenamos el formulario
   useEffect(() => {
     if (employeeToEdit) {
       setFormData(employeeToEdit);
@@ -22,31 +22,26 @@ const RegistroUsuarios = ({ employeeToEdit, onSaveComplete }) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Datos guardados:", formData);
-    // Aquí iría tu lógica para enviar a una API o base de datos
-    alert("¡Estilo registrado con éxito!");
-    onSaveComplete(); // Limpia la selección en App.js
-    setFormData({ nombre: '', especialidad: '', experiencia: '', contacto: '' });
+    console.log("Datos del barbero a guardar:", formData);
+    
+    // Aquí conectarás con tu ruta POST /barberos en el futuro
+    alert("¡Perfil de Maestro Barbero actualizado en la base de datos!");
+    
+    setFormData({ nombre: '', especialidad: '', experiencia: '', telefono: '', direccion: '' });
+    onSaveComplete(); 
   };
 
   return (
     <div className="registro-container">
       <form onSubmit={handleSubmit}>
         <h2 style={{ color: 'var(--gold-primary)', textAlign: 'center' }}>
-          {employeeToEdit ? 'Editar Barbero' : 'Nuevo Barbero'}
+          {employeeToEdit ? 'EDITAR MAESTRO' : 'NUEVO MAESTRO BARBERO'}
         </h2>
         
-        <label>Nombre del Maestro Barbero</label>
-        <input 
-          type="text" 
-          name="nombre" 
-          value={formData.nombre} 
-          onChange={handleChange} 
-          placeholder="Ej. John 'The Blade' Doe"
-          required 
-        />
+        <label>Nombre del Maestro</label>
+        <input type="text" name="nombre" value={formData.nombre} onChange={handleChange} required />
 
         <label>Especialidad</label>
         <select name="especialidad" value={formData.especialidad} onChange={handleChange}>
@@ -58,25 +53,16 @@ const RegistroUsuarios = ({ employeeToEdit, onSaveComplete }) => {
         </select>
 
         <label>Años de Experiencia</label>
-        <input 
-          type="number" 
-          name="experiencia" 
-          value={formData.experiencia} 
-          onChange={handleChange} 
-          placeholder="Años en el oficio"
-        />
+        <input type="number" name="experiencia" value={formData.experiencia} onChange={handleChange} />
 
-        <label>Contacto (WhatsApp/Tel)</label>
-        <input 
-          type="text" 
-          name="contacto" 
-          value={formData.contacto} 
-          onChange={handleChange} 
-          placeholder="+57..."
-        />
+        <label>Teléfono de Contacto</label>
+        <input type="text" name="telefono" value={formData.telefono} onChange={handleChange} placeholder="+57..." />
+
+        <label>Dirección de Residencia</label>
+        <input type="text" name="direccion" value={formData.direccion} onChange={handleChange} />
 
         <button type="submit">
-          {employeeToEdit ? 'Actualizar Perfil' : 'Registrar en la Hermandad'}
+          {employeeToEdit ? 'ACTUALIZAR PERFIL' : 'REGISTRAR EN LA HERMANDAD'}
         </button>
       </form>
     </div>

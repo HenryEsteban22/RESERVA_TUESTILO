@@ -1,50 +1,89 @@
-import React, { useState } from "react";
-import RegistroUsuarios from "./components/RegistroUsuarios.js";
-import ListaBarberos from "./components/ListaBarberos.js"; 
+import React, { useState } from 'react';
+import Login from './components/login';
+import FormularioRegistro from './components/FormularioRegistro';
+import RegistroUsuarios from './components/RegistroUsuarios'; 
+import ListaBarberos from './components/ListaBarberos';
 import './App.css';
 
 function App() {
-  // Estado para el barbero que se está editando
-  const [selectedEmployee, setSelectedEmployee] = useState(null);
-  
-  // Estado para almacenar la lista de todos los barberos registrados
+  const [vista, setVista] = useState('login');
   const [barberos, setBarberos] = useState([]);
+  const [selectedEmployee, setSelectedEmployee] = useState(null);
 
-  // Función para capturar los datos del formulario y guardarlos en la lista
-  const handleSaveComplete = (nuevoBarbero) => {
-    if (selectedEmployee) {
-      // Si estamos editando, reemplazamos el registro viejo por el nuevo
-      setBarberos(barberos.map(b => b.id === selectedEmployee.id ? nuevoBarbero : b));
-    } else {
-      // Si es nuevo, lo agregamos con un ID único
-      setBarberos([...barberos, { ...nuevoBarbero, id: Date.now() }]);
-    }
-    setSelectedEmployee(null);
+  const handleEdit = (employee) => {
+    setSelectedEmployee(employee);
   };
 
-  const handleEdit = (barbero) => {
-    setSelectedEmployee(barbero);
+  const handleSaveComplete = () => {
+    setSelectedEmployee(null);
   };
 
   return (
     <div className="App-container">
-      <h1>Reserva tu estilo - Gestión de barberos</h1>
-      
-      <div className="modulos-grid">
-        {/* COMPONENTE 1: El Formulario */}
-        <RegistroUsuarios
-          employeeToEdit={selectedEmployee}
-          onSaveComplete={handleSaveComplete}
-        />
+      {/* BOTÓN DE ACCESO RÁPIDO (Solo para desarrollo) */}
+      <button 
+        onClick={() => setVista(vista === 'gestion' ? 'login' : 'gestion')}
+        style={{
+          position: 'fixed',
+          top: '10px',
+          left: '10px',
+          zIndex: 2000,
+          padding: '8px 12px',
+          backgroundColor: '#d4af37',
+          color: 'black',
+          border: 'none',
+          borderRadius: '4px',
+          fontWeight: 'bold',
+          cursor: 'pointer',
+          fontSize: '12px'
+        }}
+      >
+        {vista === 'gestion' ? 'VOLVER AL INICIO' : 'MODO GESTIÓN (DEBUG)'}
+      </button>
 
-        <hr />
-
-        {/* COMPONENTE 2: La Tabla/Lista */}
-        <ListaBarberos 
-          datos={barberos} 
-          onEdit={handleEdit} 
+      {/* VISTA DE LOGIN */}
+      {vista === 'login' && (
+        <Login 
+          alIrARegistro={() => setVista('registro')} 
+          alLoguear={() => setVista('gestion')} 
         />
-      </div>
+      )}
+
+      {/* VISTA DE REGISTRO DE USUARIOS */}
+      {vista === 'registro' && (
+        <div className="login-fondo">
+          <FormularioRegistro alFinalizar={() => setVista('login')} />
+        </div>
+      )}
+
+      {/* VISTA DE GESTIÓN DE BARBEROS */}
+      {vista === 'gestion' && (
+        <div className="gestion-container">
+          <button 
+            className="boton-cerrar" 
+            onClick={() => setVista('login')}
+            style={{float: 'right', margin: '20px'}}
+          >
+            CERRAR SESIÓN
+          </button>
+          
+          <h1 className="barberia-titulo" style={{textAlign: 'center', color: '#d4af37', marginTop: '40px'}}>
+            GESTIÓN DE MAESTROS BARBEROS
+          </h1>
+          
+          <div className="modulos-grid">
+            <RegistroUsuarios 
+              employeeToEdit={selectedEmployee}
+              onSaveComplete={handleSaveComplete}
+            />
+            <hr />
+            <ListaBarberos 
+              datos={barberos} 
+              onEdit={handleEdit} 
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

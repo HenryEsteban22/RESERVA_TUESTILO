@@ -1,0 +1,85 @@
+.login-fondo {
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95));
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-tarjeta {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    border: 5px solid #d4af37; /* El dorado de tu gestión de barberos */
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.barberia-titulo {
+    color: #d4af37;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.subtitulo-dorado {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.campo-entrada {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.campo-entrada label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+.campo-entrada input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.boton-dorado {
+    width: 100%;
+    padding: 14px;
+    background-color: #d4af37;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 10px;
+}
+
+.boton-dorado:hover {
+    background-color: #b8962e;
+    transform: translateY(-2px);
+}
+
+.registro-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.registro-link span {
+    color: #d4af37;
+    font-weight: bold;
+    cursor: pointer;
+}

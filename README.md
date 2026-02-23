@@ -13,7 +13,6 @@ Este módulo realiza la gestión de usuarios (CRUD) y la implementación de serv
 * **Frontend:** React.js
 * **Versionamiento:** Git / GitHub
 
----
 
 ## 🚀 Pruebas de Funcionamiento (CRUD en Postman)
 
@@ -33,34 +32,35 @@ Modifica la información de un usuario existente mediante su ID.
 Elimina un registro de la base de datos.
 ![Eliminación de Usuario](./img/postman_delete.png)
 
----
 
-## 💻 Evidencia AA5: Diseño y Desarrollo de Servicios Web
+## Evidencia AA3: Codificación de Módulos (Standalone/Web) reserva tu estilo 💈
 
-### 📸 Interfaz de Usuario (React)
-Interfaz de registro operando en tiempo real y conectada al backend:
-![Formulario de Registro](./img/imagen%20del%20formulario.jpeg)
+Este repositorio contiene el desarrollo del Frontend, para el sistema reserva tu estilo, realizado en **React**, enfocado en la experiencia del usuario (UX) y la interfaz de gestión para la barbería.
 
-### 1. Registro con Encriptación (Bcrypt)
-Servicio que recibe los datos y cifra la contraseña antes de almacenarla en MySQL.
-![Registro Seguro](./img/POST%20usuario%20creado.jpeg)
+## 🚀 Funcionalidades de la Interfaz
 
-### 2. Inicio de Sesión y Token (JWT)
-Servicio de autenticación que valida credenciales y genera un token de seguridad.
-![Login y Token](./img/Inicio%20de%20sesión.jpeg)
+La aplicación permite la interacción segura de los usuarios y la administración del personal mediante las siguientes vistas:
 
-### 3. Validaciones de Verificación
-Pruebas de manejo de errores cuando los datos son incorrectos o el usuario no existe.
-![Validación Error](./img/POST%20usuario%20no%20encontrado.jpeg)
-![Validación DB](./img/MYSQL%20validación.jpeg)
+* **Autenticación de Usuarios:** Formulario de inicio de sesión con validaciones y mensajes de bienvenida personalizados.
+* **Gestión de Personal:** Interfaz dedicada para el registro de nuevos maestros barberos, incluyendo especialidad y datos de contacto.
+* **Consumo de API:** Integración de componentes con servicios de autenticación y registro.
 
----
+## 📸 Evidencias de la Interfaz (UI)
 
-## ⚙️ Configuración del Proyecto
-Para ejecutar este proyecto localmente:
-1. Configurar archivo `.env` con las credenciales de la DB y `JWT_SECRET`.
-2. Ejecutar `npm install` en las carpetas de backend y frontend.
-3. Iniciar con `npm start`.
+### 1. Inicio de Sesión (Login)
+Interfaz de acceso donde el usuario ingresa sus credenciales. Se observa la validación exitosa con el mensaje "¡Bienvenido a la Hermandad!".
+
+![Interfaz de Login](./img/Inicio%20de%20sesión%20en%20REACT.jpeg)
+
+### 2. Registro de Nuevo Barbero
+Vista de formulario avanzada para la gestión de empleados, permitiendo capturar nombre y especialidad. Se muestra la confirmación "¡Estilo registrado con éxito!".
+
+![Registro de Barbero](./img/Registro%20usuario%20REACT.jpeg)
+
+## 🛠️ Tecnologías Utilizadas
+* **React.js:** Para la construcción de la arquitectura de componentes.
+* **Manejo de Estados:** Gestión de formularios y alertas de confirmación.
+* **Estilos Personalizados:** Diseño oscuro adaptado a la identidad de la marca.
 
 **Aprendiz:** Henry Esteban Morales Cuellar
 **Programa:** ADSO
